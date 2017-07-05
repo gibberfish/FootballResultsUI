@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'Division List Page';
   divisions: Division[];
   selectedDivision: Division;
+  errorMessage: string;
 
   constructor(private divisionService: DivisionService) { }
 
@@ -20,11 +21,14 @@ export class AppComponent implements OnInit {
   }
 
   getDivisions(): void {
-    // this.divisionService.getDivisions().then(divisions => this.divisions = divisions);
-    this.divisionService.getDivisionsSlowly().then(divisions => this.divisions = divisions);
+    this.divisionService.getDivisions()
+      .subscribe(
+        divisions => this.divisions = divisions,
+        error => this.errorMessage = <any>error
+    );
   }
 
   ngOnInit(): void {
-  this.getDivisions();
+    this.getDivisions();
   }
 }
