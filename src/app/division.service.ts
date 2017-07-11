@@ -10,7 +10,7 @@ import { DIVISIONS } from './mock-divisions';
 
 @Injectable()
 export class DivisionService {
-  private divisionUrl = 'http://localhost:1972/api/divisions/'
+  private divisionUrl = 'http://localhost:1972/api/divisions?sort=id'
 
   constructor (private http: Http) {}
 
