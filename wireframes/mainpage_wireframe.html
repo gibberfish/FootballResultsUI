@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Football Results Analyser</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-datepicker-min.css" rel="stylesheet">
+    <link href="bootstrap/css/cerulean.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="football-results-analyser.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="page" class="container">
+      <header class="container">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            </button>
+            <a class="navbar-brand" href="#">Football Results Analyser</a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Results</a></li>
+              <li><a href="#about">Predictions</a></li>
+              <li id="datepicker-li"><input class="form-control" id="datepicker" name="datepicker" placeholder="DD/MM/YYYY" type="text"/></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Admin</a></li>
+            </ul>
+
+          </div><!--/.nav-collapse -->
+
+
+        </nav>
+      </header>
+      <section id="body" class="container">
+        <div class="row" >
+          <div id="sidemenu" class="col-xs-4">
+
+            <ul class="nav nav-sidebar">
+              <li class="active"><a href="#">Premier League</a></li>
+              <li><a href="#">Championship</a></li>
+              <li><a href="#">League 1</a></li>
+              <li><a href="#">League 2</a></li>
+            </ul>
+          </div>
+
+          <div id="main" class="col-xs-8" >
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Pos</th>
+                      <th>Team</th>
+                      <th>Points</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Portsmouth</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Arsenal</td>
+                      <td>97</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Millwall</td>
+                      <td>78</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Southampton</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+
+        </div>
+      </section>
+      <hr/>
+      <footer class="container">
+        Copyright - The MindBadger 2017
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap-datepicker.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var datepicker=$('input[name="datepicker"]');
+
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        var options={
+          format: 'dd/mm/yyyy',
+          container: container,
+          todayHighlight: true,
+          autoclose: true,
+        };
+
+        datepicker.datepicker(options);
+      })
+    </script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	  <!--
+      <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+	  -->
+  </body>
+</html>

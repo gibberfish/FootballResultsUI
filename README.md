@@ -30,3 +30,24 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Integrating with bootstrap
+
+https://medium.com/codingthesmartway-com-blog/using-bootstrap-with-angular-c83c3cee3f4a
+
+* npm install --save @ng-bootstrap/ng-bootstrap
+* npm install bootstrap@4.0.0-alpha.6
+* Add this to .angular-cli.json
+
+"styles": [
+    "styles.css",
+    "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+  ],
+  "scripts": [
+    "../node_modules/jquery/dist/jquery.min.js",
+    "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+  ],
+
+* Add to app.module.ts
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';

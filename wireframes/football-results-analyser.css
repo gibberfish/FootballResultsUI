@@ -1,4 +1,4 @@
-body {
+/*body {
   padding-top: 50px;
 }
 .starter-template {
@@ -8,4 +8,11 @@ body {
 
 table {
 	font-size: 12px;
+}*/
+
+body { padding-top: 50px; }
+
+#datepicker-li {
+  padding: 5px 15px;
+  line-height: 50px;
 }
