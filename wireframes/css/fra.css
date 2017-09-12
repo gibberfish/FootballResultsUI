@@ -4,7 +4,7 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 
@@ -13,7 +13,7 @@ body {
  */
 
 .sub-header {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   border-bottom: 1px solid #eee;
 }
 
@@ -41,7 +41,7 @@ body {
     left: 0;
     z-index: 1000;
     display: block;
-    padding: 20px;
+    padding: 10px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #f5f5f5;
@@ -51,13 +51,13 @@ body {
 
 /* Sidebar navigation */
 .nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+  margin-right: -11px; /* 20px padding + 1px border */
+  margin-bottom: 10px;
+  margin-left: -10px;
 }
 .nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
@@ -76,8 +76,8 @@ body {
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 10px;
+    padding-left: 20px;
   }
 }
 .main .page-header {
@@ -90,7 +90,7 @@ body {
  */
 
 .placeholders {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .placeholders h4 {
@@ -124,7 +124,7 @@ body {
 
 .panel-default>.panel-heading a {
   display: block;
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 
 .panel-default>.panel-heading a:after {
@@ -163,7 +163,7 @@ body {
   width: 100%;
   float: left;
   clear: both;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .accordion-option .title {
@@ -201,17 +201,18 @@ body {
 
 .accordion-wrapper-horiz {
 display: block;
-height: 350px;
+height: 800px;
 max-height: 100%;
 }
 
 #horiz-accordion {
-max-width: 36.125rem;
-margin-left: 15px;
+max-width: 800px;
+margin-left: 10px;
 }
 
 .panel-group-horiz {
-  width:430px;
+  background-color: : green;
+  width:800px;
   z-index: 100;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateX(-100%) rotate(-90deg);
@@ -225,15 +226,22 @@ margin-left: 15px;
 }
 
 .panel-body-horiz {
-  background-color: : red;
--webkit-backface-visibility: hidden;
--webkit-transform: translateX(0%) rotate(90deg);
--webkit-transform-origin: left top;
--moz-transform: translateX(0%) rotate(90deg);
--moz-transform-origin: left top;
--o-transform: translateX(0%) rotate(90deg);
--o-transform-origin: left top;
-transform: translateX(0%) rotate(90deg);
-transform-origin: left top;
-height: 100.2rem;
+  background-color: grey;
+  transform: translateX(0%) rotate(90deg);
+  transform-origin: center center;
+  height:800px;
+}
+
+
+
+.panel-group-horiz xxxx {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateX(-100%) rotate(90deg);
+    -webkit-transform-origin: right top;
+    -moz-transform: translateX(-100%) rotate(90deg);
+    -moz-transform-origin: right top;
+    -o-transform: translateX(-100%) rotate(90deg);
+    -o-transform-origin: right top;
+    transform: translateX(-100%) rotate(90deg);
+    transform-origin: right top;
 }
