@@ -59,7 +59,7 @@
           SIDE BAR
         -->
         <div class="col-sm-3 col-md-2 sidebar">
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+          <div class="panel-group toggle-accordion" id="accordion" role="tablist" aria-multiselectable="false">
             <div class="panel panel-primary ">
               <div class="panel-heading" role="tab" id="heading1">
                 <h4 class="panel-title">
@@ -218,7 +218,7 @@
         <!--
           MAIN BODY
         -->
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div id="main-body" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="row">
             <div class="col-sm-12">
 
@@ -233,7 +233,7 @@
           <!--
             DATE ANALYSIS BODY
           -->
-          <div class="panel-group" id="body-accordion" role="tablist" aria-multiselectable="false">
+          <div class="panel-group toggle-accordion" id="body-accordion" role="tablist" aria-multiselectable="false">
             <div class="panel panel-primary ">
               <div class="panel-heading" role="tab" id="rheading1">
                 <h4 class="panel-title">
@@ -244,7 +244,7 @@
               </div>
 
               <div id="rcollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="rheading1">
-                <div class="panel-body">
+                <div class="panel-body main-panel-body">
                   <div class="accordion-wrapper-horiz">
                     <div class="panel-group panel-group-horiz" id="horiz-accordion" role="tablist" aria-multiselectable="true">
                       <div class="panel panel-primary">
@@ -254,41 +254,47 @@
                             </a>
                           </h4>
                         </div>
-                        <div id="hcollapse1" class="panel-collapse collapse in panel-body-horiz" role="tabpanel" aria-labelledby="hheading1">
-                          <div class="table-responsive">
-                            <h4>League Table</h4>
-                            <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th>Pos</th>
-                                  <th>Team</th>
-                                  <th>Points</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>Portsmouth</td>
-                                  <td>99</td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Arsenal</td>
-                                  <td>97</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Millwall</td>
-                                  <td>78</td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>Southampton</td>
-                                  <td>3</td>
-                                </tr>
-                              </tbody>
-                            </table>
+
+                        <div id="hcollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="hheading1">
+                          <div class="panel-body panel-body-horiz">
+                            <h4>Premier League Table</h4>
+
+                            <div class="table-responsive">
+                              <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>Pos</th>
+                                    <th>Team</th>
+                                    <th>Points</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>Portsmouth</td>
+                                    <td>99</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>Arsenal</td>
+                                    <td>97</td>
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Millwall</td>
+                                    <td>78</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>Southampton</td>
+                                    <td>3</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
                           </div>
+
                         </div>
                       </div>
                       <div class="panel panel-primary">
@@ -300,7 +306,7 @@
                         </div>
                         <div id="hcollapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="hheading2">
                           <div class="panel-body panel-body-horiz">
-                            <h4>Slide Title</h4>
+                            <h4>Premier League Fixtures</h4>
                           </div>
                         </div>
                       </div>
@@ -309,48 +315,42 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <!--
-            FIXTURE ANALYSIS BODY
-          -->
-          <div class="panel panel-primary ">
-            <div class="panel-heading" role="tab" id="rheading2">
-              <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse2" aria-expanded="true" aria-controls="rcollapse2">
-                Fixture Analysis
-              </a>
+            <!--
+              FIXTURE ANALYSIS BODY
+            -->
+            <div class="panel panel-primary ">
+              <div class="panel-heading" role="tab" id="rheading2">
+                <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse2" aria-expanded="true" aria-controls="rcollapse2">
+                  Fixture Analysis
+                </a>
+                </h4>
+                </div>
+                <div id="rcollapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading2">
+                  <div class="panel-body main-panel-body">
+                    Hello!
+                  </div>
+                </div>
+            </div>
+
+            <!--
+              SUMMARY ANALYSIS BODY
+            -->
+            <div class="panel panel-primary ">
+              <div class="panel-heading" role="tab" id="rheading3">
+                <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse3" aria-expanded="true" aria-controls="rcollapse3">
+                  Summary Analysis
+                </a>
               </h4>
               </div>
-              <div id="rcollapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading2">
-                <div class="panel-body">
+              <div id="rcollapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading3">
+                <div class="panel-body main-panel-body">
                   Hello!
                 </div>
               </div>
-          </div>
-
-          <!--
-            SUMMARY ANALYSIS BODY
-          -->
-          <div class="panel panel-primary ">
-            <div class="panel-heading" role="tab" id="rheading3">
-              <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse3" aria-expanded="true" aria-controls="rcollapse3">
-                Summary Analysis
-              </a>
-            </h4>
             </div>
-            <div id="rcollapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading3">
-              <div class="panel-body">
-                Hello!
-              </div>
-            </div>
-          </div>
-
-
-
-
-
 
           </div>
         </div>

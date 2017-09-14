@@ -256,13 +256,14 @@ margin-left: 10px;
   -o-transform-origin: right top;
   transform: translateX(-100%) rotate(-90deg);
   transform-origin: right top;
+  width: 100%;
 }
 
 .panel-body-horiz {
   background-color: grey;
   transform: translateX(0%) rotate(90deg);
   transform-origin: center center;
-  height:700px;
+  height:698px;
 }
 
 
@@ -277,4 +278,15 @@ margin-left: 10px;
     -o-transform-origin: right top;
     transform: translateX(-100%) rotate(90deg);
     transform-origin: right top;
+
+}
+
+
+#main-body-xxxxx {
+  height: calc(100% - 250px);
+  overflow: auto;
+}
+
+.main-panel-body {
+  height: 720px;
 }

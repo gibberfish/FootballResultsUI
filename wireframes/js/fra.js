@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   $(".toggle-accordion").on("click", function() {
+
     var accordionId = $(this).attr("accordion-id"),
       numPanelOpen = $(accordionId + ' .collapse.in').length;
 
