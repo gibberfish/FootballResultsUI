@@ -232,34 +232,13 @@ body {
 
 
 
-.accordion-wrapper-horiz {
+.accordion-wrapper-horiz-xxx {
 display: block;
 height: 700px;
 max-height: 100%;
 }
 
-#horiz-accordion {
-max-width: 700px;
-margin-left: 10px;
-}
-
-.panel-group-horiz {
-  background-color: : green;
-  /* width:800px; */
-  z-index: 100;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateX(-100%) rotate(-90deg);
-  -webkit-transform-origin: right top;
-  -moz-transform: translateX(-100%) rotate(-90deg);
-  -moz-transform-origin: right top;
-  -o-transform: translateX(-100%) rotate(-90deg);
-  -o-transform-origin: right top;
-  transform: translateX(-100%) rotate(-90deg);
-  transform-origin: right top;
-  width: 100%;
-}
-
-.panel-body-horiz {
+.panel-body-horiz-xxxx {
   background-color: grey;
   transform: translateX(0%) rotate(90deg);
   transform-origin: center center;
@@ -267,8 +246,7 @@ margin-left: 10px;
 }
 
 
-
-.panel-group-horiz xxxx {
+.panel-group-horiz-crapxxxx {
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateX(-100%) rotate(90deg);
     -webkit-transform-origin: right top;
@@ -282,11 +260,51 @@ margin-left: 10px;
 }
 
 
-#main-body-xxxxx {
+#main-body-XXXX {
   height: calc(100% - 250px);
   overflow: auto;
 }
 
+
+.panel-body {
+  margin: 1px;
+  padding: 4px;
+}
+
+
+/*
+This class describes the vertical panel body on the right hand sidebar
+The height is forced so that each panel is consistent
+*/
 .main-panel-body {
   height: 720px;
+}
+
+
+/*
+This allows the width of the horizontal accordion to be fixed so that it
+fits vertically into our fixed height panel body
+(the width becomes the height when rotated by 90 degrees)
+*/
+#horiz-accordion {
+max-width: 700px;
+margin-left: 10px;
+}
+
+/*
+Rotate the whole panel group
+*/
+.panel-group-horiz {
+  background-color: : green;
+  z-index: 100;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateX(-100%) rotate(-90deg);
+  -webkit-transform-origin: right top;
+  -moz-transform: translateX(-100%) rotate(-90deg);
+  -moz-transform-origin: right top;
+  -o-transform: translateX(-100%) rotate(-90deg);
+  -o-transform-origin: right top;
+  transform: translateX(-100%) rotate(-90deg);
+  transform-origin: right top;
+
 }
