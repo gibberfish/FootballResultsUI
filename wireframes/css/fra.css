@@ -308,3 +308,14 @@ Rotate the whole panel group
   transform-origin: right top;
 
 }
+
+.btn-panel-hdr {
+  padding: 0px;
+  width: 150px;
+}
+
+.btn-group-panel-hdr {
+  position:relative;
+    right: 10px;
+
+}
