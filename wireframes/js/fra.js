@@ -24,6 +24,11 @@ $(document).ready(function() {
   }
 
 
+  $('#datetimepicker1').datepicker({
+    format: 'D dd/mm/yyyy',
+    autoclose: true
+  });
+
 
 
 
@@ -40,5 +45,6 @@ $(document).ready(function() {
     $('#league-table').addClass('collapse');
     $('#fixtures').removeClass('collapse');
   })
+
 
 });

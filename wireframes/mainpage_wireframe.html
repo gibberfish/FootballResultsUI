@@ -13,6 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-datepicker-min.css" rel="stylesheet">
     <link href="bootstrap/css/cerulean.bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -62,7 +63,7 @@
 
           <label for="season-dropdown">Season:</label>
           <div class="dropdown" id="season-dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">2017/18
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">2017/18
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="#">2017/18</a></li>
@@ -74,7 +75,7 @@
           <hr />
 
           <div class="panel-group toggle-accordion" id="accordion" role="tablist" aria-multiselectable="false">
-            <div class="panel panel-primary ">
+            <div class="panel panel-default ">
               <div class="panel-heading" role="tab" id="heading1">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
@@ -248,17 +249,27 @@
             DATE ANALYSIS BODY
           -->
           <div class="panel-group toggle-accordion" id="body-accordion">
-            <div class="panel panel-primary ">
+            <div class="panel panel-primary">
               <div class="panel-heading clearfix" id="rheading1">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse1">
+                <h4 class="panel-title ">
+                  <a data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse1" class="pull-left">
                     Date Analysis
                   </a>
+                  <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <div class='input-group date pull-left' style="width: 170px;" id='datetimepicker1' >
+                      <input type='text' class="form-control input-xsm" data-provide="datepicker" style="height: 24px;"/>
+                      <span class="input-group-addon input-sm" style="height: 24px;">
+                          <small><span class="glyphicon glyphicon-calendar"></span></small>
+                      </span>
+                  </div>
+
+
                   <div class="btn-group btn-group-panel-hdr pull-right">
                     <a id="league-table-button" href="#" class="btn btn-default btn-md btn-panel-hdr active">Table</a>
                     <a id="fixtures-button" href="#" class="btn btn-default btn-md btn-panel-hdr">Fixtures</a>
                   </div>
                 </h4>
+
               </div>
 
               <div id="rcollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="rheading1">
