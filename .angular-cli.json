@@ -19,12 +19,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "./assets/bootstrap/css/bootstrap.min.css",
+        "./assets/bootstrap/css/bootstrap-datepicker-min.css",
+        "./assets/bootstrap/css/cerulean.bootstrap.min.css",
+        "./assets/bootstrap/css/ie10-viewport-bug-workaround.css",
+        "./assets/css/fra.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "./assets/jquery-1.11.3.min.js",
+        "./assets/bootstrap/js/bootstrap.min.js",
+        "./assets/bootstrap/js/bootstrap-datepicker.min.js",
+        "./assets/js/fra.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

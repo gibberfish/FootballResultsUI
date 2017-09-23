@@ -5,30 +5,10 @@ import { DivisionService } from './division.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css', '../assets/bootstrap/css/bootstrap.min.css', '../assets/bootstrap/css/bootstrap-datepicker-min.css',
+          '../assets/bootstrap/css/cerulean.bootstrap.min.css', '../assets/css/fra.css'],
   providers: [DivisionService]
 })
-export class AppComponent implements OnInit {
-  title = 'Division List Page';
-  divisions: Division[];
-  selectedDivision: Division;
-  errorMessage: string;
-
-  constructor(private divisionService: DivisionService) { }
-
-  onSelect(division: Division): void {
-  this.selectedDivision = division;
-  }
-
-  getDivisions(): void {
-    this.divisionService.getDivisions()
-      .subscribe(
-        divisions => this.divisions = divisions,
-        error => this.errorMessage = <any>error
-    );
-  }
-
-  ngOnInit(): void {
-    this.getDivisions();
-  }
+export class AppComponent {
+  title = 'Football Results Analyser';
 }

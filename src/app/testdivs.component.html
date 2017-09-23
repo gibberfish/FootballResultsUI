@@ -1,0 +1,10 @@
+<div class="container">
+<h1>{{title}}</h1>
+<h2 class=".btn-danger">Divisions</h2>
+<ul class="divisions">
+  <li *ngFor="let division of divisions" [class.selected]="division === selectedDivision" (click)="onSelect(division)">
+    <span class=".badge">{{division.id}}</span> {{division.attributes.divisionName}}
+  </li>
+</ul>
+
+</div>
