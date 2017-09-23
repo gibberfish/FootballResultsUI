@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule, JsonpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { AppComponent } from './app.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  declarations: [AppComponent]
+  declarations: [AppComponent, TopNavComponent]
 })
 export class AppModule { }
