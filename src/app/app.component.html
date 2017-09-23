@@ -1,5 +1,5 @@
-
-<top-nav></top-nav>
+<top-nav>
+</top-nav>
 
 <div class="container-fluid">
   <div class="row">
@@ -9,9 +9,71 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="panel-group toggle-accordion" id="body-accordion">
-            <date-analysis></date-analysis>
-            <fixture-analysis></fixture-analysis>
-            <summary-analysis></summary-analysis>
+            <div class="panel panel-primary">
+              <div class="panel-heading clearfix" id="rheading1">
+                <h4 class="panel-title ">
+                  <a data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse1" class="pull-left">Date Analysis</a>
+                  <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <div class='input-group date pull-left' style="width: 170px;" id='datetimepicker1'>
+                    <input type='text' class="form-control input-xsm" data-provide="datepicker" style="height: 24px;" />
+                    <span class="input-group-addon input-sm" style="height: 24px;">
+                                  <small><span class="glyphicon glyphicon-calendar"></span></small>
+                    </span>
+                  </div>
+                  <div class="btn-group btn-group-panel-hdr pull-right">
+                    <a id="league-table-button" href="#" class="btn btn-default btn-md btn-panel-hdr active">Table</a>
+                    <a id="fixtures-button" href="#" class="btn btn-default btn-md btn-panel-hdr">Fixtures</a>
+                  </div>
+                </h4>
+              </div>
+
+              <div id="rcollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="rheading1">
+                <div class="panel-body main-panel-body">
+                  <date-analysis></date-analysis>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-primary ">
+              <div class="panel-heading clearfix" id="rheading2">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse2">Fixture Analysis</a>
+                  <div class="btn-group btn-group-panel-hdr pull-right">
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Stats</a>
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos</a>
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Fixtures</a>
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Score Spread</a>
+                  </div>
+                </h4>
+              </div>
+              <div id="rcollapse2" class="panel-collapse collapse">
+                <div class="panel-body main-panel-body">
+                  <fixture-analysis></fixture-analysis>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-primary ">
+              <div class="panel-heading clearfix" role="tab" id="rheading3">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse3" aria-expanded="true" aria-controls="rcollapse3">
+                            Summary Analysis
+                          </a>
+                  <div class="btn-group btn-group-panel-hdr pull-right">
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Pie Charts</a>
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos</a>
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Fixtures</a>
+                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos Graph</a>
+                  </div>
+                </h4>
+              </div>
+              <div id="rcollapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading3">
+                <div class="panel-body main-panel-body">
+                  <summary-analysis></summary-analysis>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
