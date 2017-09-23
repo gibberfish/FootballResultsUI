@@ -1,65 +1,17 @@
-<top-nav>
-</top-nav>
+
+<top-nav></top-nav>
 
 <div class="container-fluid">
   <div class="row">
     <side-bar></side-bar>
 
-    <!--
-      MAIN BODY
-    -->
     <div id="main-body" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="row">
         <div class="col-sm-12">
           <div class="panel-group toggle-accordion" id="body-accordion">
             <date-analysis></date-analysis>
-            <!--
-            FIXTURE ANALYSIS BODY
-          -->
-            <div class="panel panel-primary ">
-              <div class="panel-heading clearfix" role="tab" id="rheading2">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse2" aria-expanded="true" aria-controls="rcollapse2">
-                Fixture Analysis
-              </a>
-                  <div class="btn-group btn-group-panel-hdr pull-right">
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Stats</a>
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos</a>
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Fixtures</a>
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Score Spread</a>
-                  </div>
-                </h4>
-              </div>
-              <div id="rcollapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading2">
-                <div class="panel-body main-panel-body">
-                  Hello!
-                </div>
-              </div>
-            </div>
-
-            <!--
-            SUMMARY ANALYSIS BODY
-          -->
-            <div class="panel panel-primary ">
-              <div class="panel-heading clearfix" role="tab" id="rheading3">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse3" aria-expanded="true" aria-controls="rcollapse3">
-                Summary Analysis
-              </a>
-                  <div class="btn-group btn-group-panel-hdr pull-right">
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Pie Charts</a>
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos</a>
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Fixtures</a>
-                    <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos Graph</a>
-                  </div>
-                </h4>
-              </div>
-              <div id="rcollapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading3">
-                <div class="panel-body main-panel-body">
-                  Hello!
-                </div>
-              </div>
-            </div>
+            <fixture-analysis></fixture-analysis>
+            <summary-analysis></summary-analysis>
           </div>
         </div>
       </div>

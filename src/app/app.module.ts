@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DateAnalysisComponent } from './date-analysis/date-analysis.component';
+import { FixtureAnalysisComponent } from './fixture-analysis/fixture-analysis.component';
+import { SummaryAnalysisComponent } from './summary-analysis/summary-analysis.component';
 
 @NgModule({
   imports: [
@@ -18,6 +20,7 @@ import { DateAnalysisComponent } from './date-analysis/date-analysis.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  declarations: [AppComponent, TopNavComponent, SideBarComponent, DateAnalysisComponent]
+  declarations: [AppComponent, TopNavComponent, SideBarComponent, DateAnalysisComponent,
+    FixtureAnalysisComponent, SummaryAnalysisComponent]
 })
 export class AppModule { }
