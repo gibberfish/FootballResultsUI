@@ -5,8 +5,7 @@ import { DivisionService } from './division.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css', '../assets/bootstrap/css/bootstrap.min.css', '../assets/bootstrap/css/bootstrap-datepicker-min.css',
-          '../assets/bootstrap/css/cerulean.bootstrap.min.css', '../assets/css/fra.css'],
+  styleUrls: ['./app.component.css'],
   providers: [DivisionService]
 })
 export class AppComponent {
