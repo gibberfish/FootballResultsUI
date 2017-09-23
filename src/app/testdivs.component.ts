@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Division } from './division';
-import { DivisionService } from './division.service';
+import { Division } from './models/division';
+import { DivisionService } from './services/division.service';
 
 @Component({
   selector: 'app-root',

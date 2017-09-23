@@ -6,12 +6,12 @@
     <label for="season-dropdown">Season:</label>
 
     <div class="dropdown" id="season-dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">2017/18
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{selectedSeason.id}}
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-        <li><a href="#">2017/18</a></li>
-        <li><a href="#">2016/17</a></li>
-        <li><a href="#">2015/16</a></li>
+        <li *ngFor="let season of seasons" [class.selected]="season === selectedSeason" (click)="onSelect(season)">
+            <a href="#">{{season.id}}</a>
+        </li>
     </ul>
     </div>
 

@@ -5,17 +5,17 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { Division } from './division';
-import { DIVISIONS } from './mock-divisions';
+import { Season } from '../models/season';
 
 @Injectable()
-export class DivisionService {
-  private divisionUrl = 'http://localhost:1972/api/divisions?sort=id'
+export class SeasonService {
+  private seasonUrl = 'http://localhost:1972/api/seasons?sort=-id'
 
   constructor (private http: Http) {}
 
-  getDivisions(): Observable<Division[]> {
-    return this.http.get(this.divisionUrl)
+  //TODO Need to ensure that the first season returned is set as the selectedSeason by default
+  getSeasons(): Observable<Season[]> {
+    return this.http.get(this.seasonUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }
