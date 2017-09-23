@@ -5,6 +5,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { DateAnalysisComponent } from './date-analysis/date-analysis.component';
 
 @NgModule({
   imports: [
@@ -16,6 +18,6 @@ import { TopNavComponent } from './top-nav/top-nav.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  declarations: [AppComponent, TopNavComponent]
+  declarations: [AppComponent, TopNavComponent, SideBarComponent, DateAnalysisComponent]
 })
 export class AppModule { }

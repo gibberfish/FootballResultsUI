@@ -1,342 +1,51 @@
+<top-nav>
+</top-nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <side-bar></side-bar>
+
     <!--
-      NAV BAR
+      MAIN BODY
     -->
-    <top-nav></top-nav>
-
-    <div class="container-fluid">
+    <div id="main-body" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="row">
-        <!--
-          SIDE BAR
-        -->
-        <div class="col-sm-3 col-md-2 sidebar">
-
-          <label for="season-dropdown">Season:</label>
-          <div class="dropdown" id="season-dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">2017/18
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">2017/18</a></li>
-              <li><a href="#">2016/17</a></li>
-              <li><a href="#">2015/16</a></li>
-            </ul>
-          </div>
-
-          <hr />
-
-          <div class="panel-group toggle-accordion" id="accordion" role="tablist" aria-multiselectable="false">
-            <div class="panel panel-default ">
-              <div class="panel-heading" role="tab" id="heading1">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                    Premier League
-                  </a>
-                </h4>
-              </div>
-              <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item">AFC Bournemouth</li>
-                    <li class="list-group-item">Arsenal</li>
-                    <li class="list-group-item">Brighton &amp; Hove Albion</li>
-                    <li class="list-group-item">Burnley</li>
-                    <li class="list-group-item">Chelsea</li>
-                    <li class="list-group-item">Crystal Palace</li>
-                    <li class="list-group-item">Everton</li>
-                    <li class="list-group-item">Huddersfield Town</li>
-                    <li class="list-group-item">Leicester City</li>
-                    <li class="list-group-item">Liverpool</li>
-                    <li class="list-group-item">Manchester City</li>
-                    <li class="list-group-item">Manchester United</li>
-                    <li class="list-group-item">Newcastle United</li>
-                    <li class="list-group-item">Southampton</li>
-                    <li class="list-group-item">Stoke City</li>
-                    <li class="list-group-item">Swansea City</li>
-                    <li class="list-group-item">Tottenham Hotspur</li>
-                    <li class="list-group-item">Watford</li>
-                    <li class="list-group-item">West Bromwich Albion</li>
-                    <li class="list-group-item">West Ham United</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading2">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                    Championship
-                  </a>
-                </h4>
-              </div>
-              <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item">Aston Villa</li>
-                    <li class="list-group-item">Barnsley</li>
-                    <li class="list-group-item">Birmingham City</li>
-                    <li class="list-group-item">Bolton Wanderers</li>
-                    <li class="list-group-item">Brentford</li>
-                    <li class="list-group-item">Bristol City</li>
-                    <li class="list-group-item">Burton Albion</li>
-                    <li class="list-group-item">Cardiff City</li>
-                    <li class="list-group-item">Derby County</li>
-                    <li class="list-group-item">Fulham</li>
-                    <li class="list-group-item">Hull City</li>
-                    <li class="list-group-item">Ipswich Town</li>
-                    <li class="list-group-item">Leeds United</li>
-                    <li class="list-group-item">Middlesbrough</li>
-                    <li class="list-group-item">Millwall</li>
-                    <li class="list-group-item">Norwich City</li>
-                    <li class="list-group-item">Nottingham Forest</li>
-                    <li class="list-group-item">Preston North End</li>
-                    <li class="list-group-item">Queens Park Rangers</li>
-                    <li class="list-group-item">Reading</li>
-                    <li class="list-group-item">Sheffield United</li>
-                    <li class="list-group-item">Sheffield Wednesday</li>
-                    <li class="list-group-item">Sunderland</li>
-                    <li class="list-group-item">Wolverhampton Wanderers</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading3">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
-                    League One
-                  </a>
-                </h4>
-              </div>
-              <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item">AFC Wimbledon</li>
-                    <li class="list-group-item">Blackburn Rovers</li>
-                    <li class="list-group-item">Blackpool</li>
-                    <li class="list-group-item">Bradford City</li>
-                    <li class="list-group-item">Bristol Rovers</li>
-                    <li class="list-group-item">Bury</li>
-                    <li class="list-group-item">Charlton Athletic</li>
-                    <li class="list-group-item">Doncaster Rovers</li>
-                    <li class="list-group-item">Fleetwood Town</li>
-                    <li class="list-group-item">Gillingham</li>
-                    <li class="list-group-item">Milton Keynes Dons</li>
-                    <li class="list-group-item">Northampton Town</li>
-                    <li class="list-group-item">Oldham Athletic</li>
-                    <li class="list-group-item">Oxford United</li>
-                    <li class="list-group-item">Peterborough United</li>
-                    <li class="list-group-item">Plymouth Argyle</li>
-                    <li class="list-group-item">Portsmouth</li>
-                    <li class="list-group-item">Rochdale</li>
-                    <li class="list-group-item">Rotherham United</li>
-                    <li class="list-group-item">Scunthorpe United</li>
-                    <li class="list-group-item">Shrewsbury Town</li>
-                    <li class="list-group-item">Southend United</li>
-                    <li class="list-group-item">Wallsall</li>
-                    <li class="list-group-item">Wigan Athletic</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading4">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
-                    League Two
-                  </a>
-                </h4>
-              </div>
-              <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
-                <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item">Accrington Stanley</li>
-                    <li class="list-group-item">Barnet</li>
-                    <li class="list-group-item">Cambridge United</li>
-                    <li class="list-group-item">Carlisle United</li>
-                    <li class="list-group-item">Cheltenham Town</li>
-                    <li class="list-group-item">Chesterfield</li>
-                    <li class="list-group-item">Colchester United</li>
-                    <li class="list-group-item">Coventry City</li>
-                    <li class="list-group-item">Crawley Town</li>
-                    <li class="list-group-item">Crewe Alexandra</li>
-                    <li class="list-group-item">Exeter City</li>
-                    <li class="list-group-item">Forest Green Rovers</li>
-                    <li class="list-group-item">Grimsby Town</li>
-                    <li class="list-group-item">Licoln City</li>
-                    <li class="list-group-item">Luton Town</li>
-                    <li class="list-group-item">Mansfield Town</li>
-                    <li class="list-group-item">Morecambe</li>
-                    <li class="list-group-item">Newport County</li>
-                    <li class="list-group-item">Notts County</li>
-                    <li class="list-group-item">Port Vale</li>
-                    <li class="list-group-item">Stevenage</li>
-                    <li class="list-group-item">Swindon Town</li>
-                    <li class="list-group-item">Wycombe Wanderers</li>
-                    <li class="list-group-item">Yeovil Town</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--
-          MAIN BODY
-        -->
-        <div id="main-body" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <div class="row">
-            <div class="col-sm-12">
-
-
+        <div class="col-sm-12">
+          <div class="panel-group toggle-accordion" id="body-accordion">
+            <date-analysis></date-analysis>
             <!--
-              DATE ANALYSIS BODY
-            -->
-            <div class="panel-group toggle-accordion" id="body-accordion">
-              <div class="panel panel-primary">
-                <div class="panel-heading clearfix" id="rheading1">
-                  <h4 class="panel-title ">
-                    <a data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse1" class="pull-left">
-                      Date Analysis
-                    </a>
-                    <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <div class='input-group date pull-left' style="width: 170px;" id='datetimepicker1' >
-                        <input type='text' class="form-control input-xsm" data-provide="datepicker" style="height: 24px;"/>
-                        <span class="input-group-addon input-sm" style="height: 24px;">
-                            <small><span class="glyphicon glyphicon-calendar"></span></small>
-                        </span>
-                    </div>
-
-
-                    <div class="btn-group btn-group-panel-hdr pull-right">
-                      <a id="league-table-button" href="#" class="btn btn-default btn-md btn-panel-hdr active">Table</a>
-                      <a id="fixtures-button" href="#" class="btn btn-default btn-md btn-panel-hdr">Fixtures</a>
-                    </div>
-                  </h4>
-
-                </div>
-
-                <div id="rcollapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="rheading1">
-                  <div class="panel-body main-panel-body">
-
-
-                    <div id="league-table">
-                      <h4>Premier League Table</h4>
-                      <div class="table-responsive">
-                        <table class="table table-striped" style="font-size: 11px;">
-                          <thead>
-                            <tr>
-                              <th>Pos</th>
-                              <th>Team</th>
-                              <th>Points</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>1</td>
-                              <td>Portsmouth</td>
-                              <td>99</td>
-                            </tr>
-                            <tr>
-                              <td>2</td>
-                              <td>Arsenal</td>
-                              <td>97</td>
-                            </tr>
-                            <tr>
-                              <td>3</td>
-                              <td>Millwall</td>
-                              <td>78</td>
-                            </tr>
-                            <tr>
-                              <td>4</td>
-                              <td>Southampton</td>
-                              <td>3</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <div id="fixtures" class="collapse">
-                      <h4>Premier League Fixtures</h4>
-                      <h5>Wed 25/10/2017</h5>
-                      <div class="table-responsive">
-                        <table class="table table-striped" style="font-size: 11px;">
-                          <tbody>
-                            <tr>
-                              <td>Portsmouth</td>
-                              <td>3</td>
-                              <td>-</td>
-                              <td>0</td>
-                              <td>Southampton</td>
-                            </tr>
-                            <tr>
-                              <td>Arsenal</td>
-                              <td>1</td>
-                              <td>-</td>
-                              <td>1</td>
-                              <td>Chelsea</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <h5>Sat 28/10/2017</h5>
-                      <div class="table-responsive">
-                        <table class="table table-striped" style="font-size: 11px;">
-                          <tbody>
-                            <tr>
-                              <td>Portsmouth</td>
-                              <td></td>
-                              <td>v</td>
-                              <td></td>
-                              <td>Arsenal</td>
-                            </tr>
-                            <tr>
-                              <td>Chelsea</td>
-                              <td></td>
-                              <td>v</td>
-                              <td></td>
-                              <td>Southampton</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!--
-                FIXTURE ANALYSIS BODY
-              -->
-              <div class="panel panel-primary ">
-                <div class="panel-heading clearfix" role="tab" id="rheading2">
-                  <h4 class="panel-title">
+            FIXTURE ANALYSIS BODY
+          -->
+            <div class="panel panel-primary ">
+              <div class="panel-heading clearfix" role="tab" id="rheading2">
+                <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse2" aria-expanded="true" aria-controls="rcollapse2">
-                    Fixture Analysis
-                  </a>
+                Fixture Analysis
+              </a>
                   <div class="btn-group btn-group-panel-hdr pull-right">
                     <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Stats</a>
                     <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos</a>
                     <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Fixtures</a>
                     <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Score Spread</a>
                   </div>
-                  </h4>
-                  </div>
-                  <div id="rcollapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading2">
-                    <div class="panel-body main-panel-body">
-                      Hello!
-                    </div>
-                  </div>
+                </h4>
               </div>
+              <div id="rcollapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading2">
+                <div class="panel-body main-panel-body">
+                  Hello!
+                </div>
+              </div>
+            </div>
 
-              <!--
-                SUMMARY ANALYSIS BODY
-              -->
-              <div class="panel panel-primary ">
-                <div class="panel-heading clearfix" role="tab" id="rheading3">
-                  <h4 class="panel-title">
+            <!--
+            SUMMARY ANALYSIS BODY
+          -->
+            <div class="panel panel-primary ">
+              <div class="panel-heading clearfix" role="tab" id="rheading3">
+                <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#body-accordion" href="#rcollapse3" aria-expanded="true" aria-controls="rcollapse3">
-                    Summary Analysis
-                  </a>
+                Summary Analysis
+              </a>
                   <div class="btn-group btn-group-panel-hdr pull-right">
                     <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Pie Charts</a>
                     <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos</a>
@@ -344,19 +53,15 @@
                     <a href="#" class="btn btn-default btn-md btn-panel-hdr disabled">Lge Pos Graph</a>
                   </div>
                 </h4>
-                </div>
-                <div id="rcollapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading3">
-                  <div class="panel-body main-panel-body">
-                    Hello!
-                  </div>
+              </div>
+              <div id="rcollapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rheading3">
+                <div class="panel-body main-panel-body">
+                  Hello!
                 </div>
               </div>
-
             </div>
           </div>
-
-
-
         </div>
       </div>
     </div>
+  </div>
