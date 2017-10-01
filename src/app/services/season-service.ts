@@ -5,21 +5,23 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { SeasonDivision } from '../models/season-division';
+import { Season } from '../models/season';
 
 @Injectable()
-export class SeasonDivisionService {
+export class SeasonService {
+  private seasonUrl = 'http://localhost:1972/api/seasons?sort=-id'
 
   constructor (private http: Http) {}
 
-  getSeasonDivisions(seasonDivisionUrl): Observable<SeasonDivision[]> {
-    return this.http.get(seasonDivisionUrl)
+  //TODO This returns an array of generic objects, not Season objects - id works, but no other fields are picked up
+  getSeasons(): Observable<Season[]> {
+    return this.http.get(this.seasonUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
-  private extractData(res: Response): SeasonDivision[] {
-    const body = res.json().data as SeasonDivision[];
+  private extractData(res: Response): Season[] {
+    const body = res.json().data as Season[];
     return body;
   }
 

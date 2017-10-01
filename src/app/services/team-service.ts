@@ -5,25 +5,23 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { Division } from '../models/division';
-import { DIVISIONS } from '../models/mock-divisions';
+import { Team } from '../models/team';
 
 @Injectable()
-export class DivisionService {
-  private divisionUrl = 'http://localhost:1972/api/divisions?sort=id'
+export class TeamService {
+  private teamUrl = 'http://localhost:1972/api/teams'
 
   constructor (private http: Http) {}
 
-  getDivisions(): Observable<Division[]> {
-    return this.http.get(this.divisionUrl)
+  getTeams(): Observable<Team[]> {
+    return this.http.get(this.teamUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
-  private extractData(res: Response) {
-    const body = res.json();
-    console.log('Body: ' + body.data);
-    return body.data || { };
+  private extractData(res: Response): Team[] {
+    const body = res.json().data as Team[];
+    return body;
   }
 
   private handleError (error: Response | any) {

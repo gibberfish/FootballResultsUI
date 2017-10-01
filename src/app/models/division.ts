@@ -1,4 +1,8 @@
-export class Division {
+export interface Division {
   id: number;
-  name: string;
+  attributes: DivisionAttributes;
+}
+
+export interface DivisionAttributes {
+  divisionName: string;
 }

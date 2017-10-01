@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Season } from '../models/season';
 import { SeasonDivision } from '../models/season-division';
-import { SeasonService } from '../services/season.service';
+import { SeasonService } from '../services/season-service';
 import { SeasonDivisionService } from '../services/season-division.service';
 
 @Component({
@@ -40,10 +40,15 @@ export class SideBarComponent implements OnInit {
   getSeasonDivisions(url: String): void {
     this.seasonDivisionService.getSeasonDivisions(url)
       .subscribe(
-        seasonDivisions => this.seasonDivisions = seasonDivisions,
+        seasonDivisions => this.setDivisions(seasonDivisions),
         error => this.errorMessage = <any>error,
         () => this.selectDivision()
     );
+  }
+
+  setDivisions(seasonDivisions: SeasonDivision[]) {
+    console.log(seasonDivisions);
+    this.seasonDivisions = seasonDivisions;
   }
 
   selectSeason(): void {
