@@ -51,10 +51,9 @@ export class SideBarComponent implements OnInit {
     // Eventually, we'll also need to trigger the loading of the divisions
     this.selectedSeason = this.seasons[0];
 
-    console.log("Selected season: id = " + this.selectedSeason.id);
-//    console.log("Selected season: url = " + this.selectedSeason.divisionUrl);
+    let url = this.selectedSeason.relationships.seasonDivisions.links.related;
 
-    //this.getSeasonDivisions(this.selectedSeason.divisionUrl);
+    this.getSeasonDivisions(url);
   }
 
   selectDivision(): void {

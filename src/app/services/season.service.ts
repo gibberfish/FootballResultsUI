@@ -21,9 +21,9 @@ export class SeasonService {
   }
 
   private extractData(res: Response): Season[] {
-    const body = res.json();
+    const body = res.json().data as Season[];
     //console.log('Body: ' + JSON.stringify(body.data));
-    return body.data || { };
+    return body;
   }
 
   private handleError (error: Response | any) {
