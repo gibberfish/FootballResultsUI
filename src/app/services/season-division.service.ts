@@ -5,24 +5,24 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { Season } from '../models/season';
+import { SeasonDivision } from '../models/season-division';
 
 @Injectable()
-export class SeasonService {
+export class SeasonDivisionService {
   private seasonUrl = 'http://localhost:1972/api/seasons?sort=-id'
 
   constructor (private http: Http) {}
 
-  //TODO This returns an array of generic objects, not Season objects - id works, but no other fields are picked up
-  getSeasons(): Observable<Season[]> {
-    return this.http.get(this.seasonUrl)
+  //TODO Need to ensure that the first season returned is set as the selectedSeason by default
+  getSeasonDivisions(seasonDivisionUrl): Observable<SeasonDivision[]> {
+    return this.http.get(seasonDivisionUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
-  private extractData(res: Response): Season[] {
+  private extractData(res: Response) {
     const body = res.json();
-    //console.log('Body: ' + JSON.stringify(body.data));
+    console.log('Body: ' + JSON.stringify(body.data));
     return body.data || { };
   }
 
