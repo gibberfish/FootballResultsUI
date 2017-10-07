@@ -8,7 +8,7 @@ import { TeamService } from './services/team-service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [DivisionService]
+  providers: [DivisionService, TeamService]
 })
 export class AppComponent {
   title = 'Football Results Analyser';
@@ -20,37 +20,27 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.getDivisions();
-    this.getTeams();
+  //  this.divisions = {};
+  //  this.teams = {};
+  //  this.getDivisions();
+
+    //this.teamService.getTeams();
+    //setTimeout(() => {this.teamService.getTeam('69');} ,5000);
   }
 
-  getTeams(): void {
-      this.teamService.getTeams()
-      .subscribe(
-        teams => this.setTeams(teams),
-        error => this.errorMessage = <any>error,
-        () => {console.log("Teams: " + Object.keys(this.teams).length)}
-    );
-  }
+  // getDivisions(): void {
+  //   this.divisionService.getDivisions()
+  //     .subscribe(
+  //       divisions => this.setDivisions(divisions),
+  //       error => this.errorMessage = <any>error,
+  //       () => {console.log("Divisions: " + Object.keys(this.divisions).length)}
+  //   );
+  // }
 
-  getDivisions(): void {
-    this.divisionService.getDivisions()
-      .subscribe(
-        divisions => this.setDivisions(divisions),
-        error => this.errorMessage = <any>error,
-        () => {console.log("Divisions: " + Object.keys(this.divisions).length)}
-    );
-  }
-
-  setDivisions (divisions: Division[]) {
-    for (let division of divisions) {
-      this.divisions[division.id] = division.attributes.divisionName;
-    }
-  }
-
-  setTeams (teams: Team[]) {
-    for (let team of teams) {
-      this.teams[team.id] = team.attributes.teamName;
-    }
-  }  
+  // setDivisions (divisions: Division[]) {
+  //   for (let division of divisions) {
+  //     let divisionId: string = '' + division.id;
+  //     this.divisions[divisionId] = division.attributes.divisionName;
+  //   }
+  // } 
 }

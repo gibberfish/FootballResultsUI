@@ -11,17 +11,49 @@ import { Division } from '../models/division';
 export class DivisionService {
   private divisionUrl = 'http://localhost:1972/api/divisions'
 
+  private divisionCache: Map<string, Division> = null;
+
   constructor (private http: Http) {}
 
-  getDivisions(): Observable<Division[]> {
+  public getDivisions(): Observable<Map<string, Division>> {
+    if (this.divisionCache == null) {
+      console.log("Loading Divisions");
+      return this.loadDivisions();
+    } else {
+      console.log("Getting Divisions from cache");
+      return this.getCachedDivisions();
+    }
+  }
+
+  private loadDivisions(): Observable<Map<string, Division>> {
     return this.http.get(this.divisionUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
-  private extractData(res: Response): Division[] {
-    const body = res.json().data as Division[];
-    return body;
+  private getCachedDivisions(): Observable<Map<string, Division>> {
+    var cachedObservable: Observable<Map<string, Division>> = new Observable<Map<string, Division>> (observer => {
+      observer.next(this.divisionCache);
+      observer.complete();
+    });
+
+    return cachedObservable;
+  }
+
+  private extractData(res: Response): Map<string, Division> {
+    const divisions = res.json().data as Division[];
+
+    let divisionsMap: Map<string, Division> = new Map<string, Division>();
+
+    for (var i in divisions) {
+      var division: Division = divisions[i];
+      divisionsMap.set(division.id, division);
+    }  
+
+    // Cache the results
+    this.divisionCache = divisionsMap;
+
+    return divisionsMap;
   }
 
   private handleError (error: Response | any) {

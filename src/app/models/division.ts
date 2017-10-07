@@ -1,5 +1,5 @@
 export interface Division {
-  id: number;
+  id: string;
   attributes: DivisionAttributes;
 }
 
