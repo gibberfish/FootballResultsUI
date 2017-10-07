@@ -10,12 +10,23 @@ export interface SeasonDivisionAttributes {
 }
 
 export interface SeasonDivisionRelationship {
-  division: RelationshipLinks;
-  teams: RelationshipLinks;
-  season: RelationshipLinks;
+  division: Relationship;
+  teams: Relationship;
+  season: Relationship;
+}
+
+export interface Relationship {
+  data: RelationshipData;
+  links: RelationshipLinks;
 }
 
 export interface RelationshipLinks {
   self: string;
   related: string;
+}
+
+export interface RelationshipData {
+  id: string;
+  type: string;
+  name: string;
 }

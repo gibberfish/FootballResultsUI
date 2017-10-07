@@ -111,6 +111,14 @@ export class SideBarComponent implements OnInit {
   private onLoadOfDivisionsForSelectedSeason(seasonDivisions: SeasonDivision[]) {
     console.log("Loaded divisions for season");
     this.divisionsForSelectedSeason = seasonDivisions;
+
+    var divisions = this.divisions;
+
+    this.divisionsForSelectedSeason.forEach(function (arrayItem) {
+      arrayItem.relationships.division.data.name = divisions.get(arrayItem.relationships.division.data.id).attributes.divisionName;
+    });
+
+
   }
 
   private selectDivision(): void {

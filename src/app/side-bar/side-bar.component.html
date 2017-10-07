@@ -18,6 +18,25 @@
     <hr />
 
     <div class="panel-group toggle-accordion" id="accordion" role="tablist" aria-multiselectable="false">
+
+
+        <div class="panel panel-default" *ngFor="let seasonDivision of divisionsForSelectedSeason">
+            <div class="panel-heading" role="tab" id="heading{{seasonDivision.attributes.position}}">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{seasonDivision.attributes.position}}">
+                        {{seasonDivision.relationships.division.data.name}}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse{{seasonDivision.attributes.position}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Hello
+                    </div>
+            </div>
+        </div>
+
+
+<!--
     <div class="panel panel-default ">
         <div class="panel-heading" role="tab" id="heading1">
         <h4 class="panel-title">
@@ -170,6 +189,7 @@
         </div>
         </div>
     </div>
+-->
     </div>
 </div>
         
