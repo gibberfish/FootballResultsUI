@@ -5,6 +5,7 @@ import { Team } from '../models/team';
 import { SeasonDivision } from '../models/season-division';
 import { SeasonService } from '../services/season-service';
 import { SeasonDivisionService } from '../services/season-division.service';
+import { SeasonDivisionTeamService } from '../services/season-division-team.service';
 import { TeamService } from '../services/team-service';
 import { DivisionService } from '../services/division-service';
 
@@ -12,21 +13,23 @@ import { DivisionService } from '../services/division-service';
   selector: 'side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css'],
-  providers: [SeasonService, SeasonDivisionService, TeamService, DivisionService]
+  providers: [SeasonService, SeasonDivisionService, TeamService, DivisionService, SeasonDivisionTeamService]
 })
 export class SideBarComponent implements OnInit {
   seasons: Season[];
   divisions: Map<string, Division>;
   teams: Map<string, Team>;
   divisionsForSelectedSeason: SeasonDivision[];
+  teamsForSelectedDivisionInSeason: Team[];
 
   selectedSeason: Season;
-  errorMessage: string;
-  selectedDivision: String;
+  selectedDivision: SeasonDivision;
   
+  errorMessage: string;
 
   constructor(private seasonService: SeasonService, private seasonDivisionService: SeasonDivisionService,
-     private teamService: TeamService, private divisionService: DivisionService) { }
+     private teamService: TeamService, private divisionService: DivisionService,
+     private seasonDivisionTeamService: SeasonDivisionTeamService) { }
 
   ngOnInit(): void {
     /*
@@ -122,7 +125,27 @@ export class SideBarComponent implements OnInit {
   }
 
   private selectDivision(): void {
+    this.selectedDivision = this.divisionsForSelectedSeason[0];
+
+    let url = this.selectedDivision.relationships.teams.links.related;
+
+    this.getSeasonDivisionTeams(url);
+
     //TODO Implement this
+  }
+
+  private getSeasonDivisionTeams(url: String): void {
+    this.seasonDivisionTeamService.getSeasonDivisionTeams(url)
+      .subscribe(
+        teams => this.onLoadOfTeamsForSelectedDivisionAndSeason(teams),
+        error => this.errorMessage = <any>error,
+        () => this.selectDivision()
+    );
+  }
+
+  private onLoadOfTeamsForSelectedDivisionAndSeason (teams: Team[]): void {
+    console.log("Loaded teams for division");
+    this.teamsForSelectedDivisionInSeason = teams;
   }
 
   // onSelect(season: Season): void {

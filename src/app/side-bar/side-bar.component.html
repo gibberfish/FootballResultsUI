@@ -29,9 +29,11 @@
                 </h4>
             </div>
             <div id="collapse{{seasonDivision.attributes.position}}" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Hello
-                    </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li *ngFor="let team of teamsForSelectedDivisionInSeason" class="list-group-item">{{team.attributes.teamName}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
