@@ -1,3 +1,5 @@
+import { Team } from '../models/team';
+
 export interface SeasonDivision {
   id: number;
   type: string;
@@ -11,7 +13,7 @@ export interface SeasonDivisionAttributes {
 
 export interface SeasonDivisionRelationship {
   division: Relationship;
-  teams: Relationship;
+  teams: TeamsRelationship;
   season: Relationship;
 }
 
@@ -29,4 +31,9 @@ export interface RelationshipData {
   id: string;
   type: string;
   name: string;
+}
+
+export interface TeamsRelationship {
+  data: Team[];
+  links: RelationshipLinks;
 }

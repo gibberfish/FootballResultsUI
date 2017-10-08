@@ -3,6 +3,7 @@ import { Season } from '../models/season';
 import { Division } from '../models/division';
 import { Team } from '../models/team';
 import { SeasonDivision } from '../models/season-division';
+import { RelationshipData } from '../models/season-division';
 import { SeasonService } from '../services/season-service';
 import { SeasonDivisionService } from '../services/season-division.service';
 import { SeasonDivisionTeamService } from '../services/season-division-team.service';
@@ -20,7 +21,6 @@ export class SideBarComponent implements OnInit {
   divisions: Map<string, Division>;
   teams: Map<string, Team>;
   divisionsForSelectedSeason: SeasonDivision[];
-  teamsForSelectedDivisionInSeason: Team[];
 
   selectedSeason: Season;
   selectedDivision: SeasonDivision;
@@ -94,20 +94,12 @@ export class SideBarComponent implements OnInit {
     this.seasons = seasons
   }
 
-  private selectLatestSeason(): void {
-    this.selectedSeason = this.seasons[0];
-
-    let url = this.selectedSeason.relationships.seasonDivisions.links.related;
-
-    this.getSeasonDivisions(url);
-  }
-
   private getSeasonDivisions(url: String): void {
     this.seasonDivisionService.getSeasonDivisions(url)
       .subscribe(
         seasonDivisions => this.onLoadOfDivisionsForSelectedSeason(seasonDivisions),
         error => this.errorMessage = <any>error,
-        () => this.selectDivision()
+        () => this.selectTopDivision()
     );
   }
 
@@ -117,39 +109,53 @@ export class SideBarComponent implements OnInit {
 
     var divisions = this.divisions;
 
-    this.divisionsForSelectedSeason.forEach(function (arrayItem) {
+    this.divisionsForSelectedSeason.forEach((arrayItem) => {
       arrayItem.relationships.division.data.name = divisions.get(arrayItem.relationships.division.data.id).attributes.divisionName;
+
+      // Also get the teams for each division here
+      let teamsUrl = arrayItem.relationships.teams.links.related;
+
+      this.getSeasonDivisionTeams(arrayItem, teamsUrl);
     });
 
 
   }
 
-  private selectDivision(): void {
+  private getSeasonDivisionTeams(seasonDivision: SeasonDivision, url: String): void {
+    this.seasonDivisionTeamService.getSeasonDivisionTeams(url)
+      .subscribe(
+        teams => this.onLoadOfTeamsForSelectedDivisionAndSeason(seasonDivision, teams),
+        error => this.errorMessage = <any>error,
+        () => this.selectTopDivision()
+    );
+  }
+
+  private onLoadOfTeamsForSelectedDivisionAndSeason (seasonDivison: SeasonDivision, teams: Team[]): void {
+    console.log("Loaded teams for division");
+    
+    teams.forEach(function (arrayItem) {
+      seasonDivison.relationships.teams.data = teams;
+    });
+  }
+
+  // ********************************************************************************************************
+  //           Selection Methods
+  // ********************************************************************************************************
+  private selectLatestSeason(): void {
+    this.selectedSeason = this.seasons[0];
+
+    let url = this.selectedSeason.relationships.seasonDivisions.links.related;
+
+    this.getSeasonDivisions(url);
+  }
+
+  private selectTopDivision(): void {
     this.selectedDivision = this.divisionsForSelectedSeason[0];
 
-    let url = this.selectedDivision.relationships.teams.links.related;
-
-    this.getSeasonDivisionTeams(url);
+    // let url = this.selectedDivision.relationships.teams.links.related;
+    // this.getSeasonDivisionTeams(url);
 
     //TODO Implement this
   }
 
-  private getSeasonDivisionTeams(url: String): void {
-    this.seasonDivisionTeamService.getSeasonDivisionTeams(url)
-      .subscribe(
-        teams => this.onLoadOfTeamsForSelectedDivisionAndSeason(teams),
-        error => this.errorMessage = <any>error,
-        () => this.selectDivision()
-    );
-  }
-
-  private onLoadOfTeamsForSelectedDivisionAndSeason (teams: Team[]): void {
-    console.log("Loaded teams for division");
-    this.teamsForSelectedDivisionInSeason = teams;
-  }
-
-  // onSelect(season: Season): void {
-  //   this.selectedSeason = season;
-  // }
-  //
 }
