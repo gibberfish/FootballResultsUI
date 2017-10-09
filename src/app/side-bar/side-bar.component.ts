@@ -85,7 +85,7 @@ export class SideBarComponent implements OnInit {
       .subscribe(
         seasons => this.onInitialLoadOfSeasons(seasons),
         error => this.errorMessage = <any>error,
-        () => this.selectLatestSeason()
+        () => this.selectSeason(this.seasons[0])
     );
   }
 
@@ -149,8 +149,8 @@ export class SideBarComponent implements OnInit {
   // ********************************************************************************************************
   //           Selection Methods
   // ********************************************************************************************************
-  private selectLatestSeason(): void {
-    this.selectedSeason = this.seasons[0];
+  private selectSeason(season: Season): void {
+    this.selectedSeason = season;
 
     let url = this.selectedSeason.relationships.seasonDivisions.links.related;
 
@@ -166,4 +166,8 @@ export class SideBarComponent implements OnInit {
     //TODO Implement this
   }
 
+  public onSelect (season: Season): void {
+    console.log("Registered onSelect event: " + season.id);
+    this.selectSeason(season);    
+  }
 }
