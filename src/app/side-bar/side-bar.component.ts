@@ -95,6 +95,7 @@ export class SideBarComponent implements OnInit {
   }
 
   private getSeasonDivisions(url: String): void {
+    console.log("Getting SeasonDivisions from: " + url);
     this.seasonDivisionService.getSeasonDivisions(url)
       .subscribe(
         seasonDivisions => this.onLoadOfDivisionsForSelectedSeason(seasonDivisions),
@@ -105,13 +106,18 @@ export class SideBarComponent implements OnInit {
 
   private onLoadOfDivisionsForSelectedSeason(seasonDivisions: SeasonDivision[]) {
     console.log("Loaded divisions for season");
-    this.divisionsForSelectedSeason = seasonDivisions;
+
+    this.divisionsForSelectedSeason = seasonDivisions.sort(function(a: SeasonDivision,b: SeasonDivision){
+      return a.attributes.position - b.attributes.position;
+    });
 
     var divisions = this.divisions;
 
     this.divisionsForSelectedSeason.forEach((arrayItem) => {
       arrayItem.relationships.division.data.name = divisions.get(arrayItem.relationships.division.data.id).attributes.divisionName;
-
+      console.log("Got division: " + arrayItem.relationships.division.data.name);
+      console.log("Position: " + arrayItem.attributes.position);
+      
       // Also get the teams for each division here
       let teamsUrl = arrayItem.relationships.teams.links.related;
 
@@ -133,9 +139,11 @@ export class SideBarComponent implements OnInit {
   private onLoadOfTeamsForSelectedDivisionAndSeason (seasonDivison: SeasonDivision, teams: Team[]): void {
     console.log("Loaded teams for division");
     
-    teams.forEach(function (arrayItem) {
-      seasonDivison.relationships.teams.data = teams;
+    teams.sort(function(a: Team,b: Team){
+      return a.attributes.teamName.localeCompare(b.attributes.teamName);
     });
+
+    seasonDivison.relationships.teams.data = teams;
   }
 
   // ********************************************************************************************************
