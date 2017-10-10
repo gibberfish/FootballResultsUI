@@ -6,7 +6,7 @@
     <label for="season-dropdown">Season:</label>
 
     <div class="dropdown" id="season-dropdown">
-    <button [(ngModel)]="selectedSeason" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{selectedSeason ? selectedSeason.id : 'None'}}
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{selectedSeason ? selectedSeason.id : 'None'}}
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
         <li *ngFor="let season of seasons" [class.selected]="season === selectedSeason" (click)="onSelect(season)">
@@ -20,10 +20,10 @@
     <div class="panel-group toggle-accordion" id="accordion" role="tablist" aria-multiselectable="false">
 
 
-        <div class="panel panel-default" *ngFor="let seasonDivision of divisionsForSelectedSeason">
+        <div class="panel" [ngClass]="{'panel-primary' : seasonDivision == selectedDivision, 'panel-default' : seasonDivision != selectedDivision}" *ngFor="let seasonDivision of divisionsForSelectedSeason">
             <div class="panel-heading" role="tab" id="heading{{seasonDivision.attributes.position}}">
                 <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{seasonDivision.attributes.position}}">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{seasonDivision.attributes.position}}" (click)="onSelectDivision(seasonDivision)">
                         {{seasonDivision.relationships.division.data.name}}
                     </a>
                 </h4>

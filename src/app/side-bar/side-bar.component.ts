@@ -170,4 +170,9 @@ export class SideBarComponent implements OnInit {
     console.log("Registered onSelect event: " + season.id);
     this.selectSeason(season);    
   }
+
+  public onSelectDivision (division: SeasonDivision): void {
+    console.log("Division Clicked: " + JSON.stringify(division));
+    this.selectedDivision = division;
+  }
 }
