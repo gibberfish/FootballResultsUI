@@ -31,7 +31,9 @@
             <div id="collapse{{seasonDivision.attributes.position}}" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li *ngFor="let team of seasonDivision.relationships.teams.data" class="list-group-item">{{team.attributes.teamName}}</li>
+                        <li *ngFor="let team of seasonDivision.relationships.teams.data" class="list-group-item"
+                          (click)="onSelectTeam(team)"
+                          [ngClass]="{'active' : team == selectedTeam}">{{team.attributes.teamName}}</li>
                     </ul>
                 </div>
             </div>

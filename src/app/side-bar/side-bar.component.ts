@@ -24,6 +24,7 @@ export class SideBarComponent implements OnInit {
 
   selectedSeason: Season;
   selectedDivision: SeasonDivision;
+  selectedTeam: Team;
   
   errorMessage: string;
 
@@ -172,7 +173,12 @@ export class SideBarComponent implements OnInit {
   }
 
   public onSelectDivision (division: SeasonDivision): void {
-    console.log("Division Clicked: " + JSON.stringify(division));
     this.selectedDivision = division;
+    this.selectedTeam = null;
+  }
+
+  public onSelectTeam (team: Team): void {
+    this.selectedTeam = team;
+    this.selectedDivision = null;
   }
 }
