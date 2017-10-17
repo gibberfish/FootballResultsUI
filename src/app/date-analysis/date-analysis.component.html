@@ -36,47 +36,21 @@
     </div>
 </div>
 <div id="fixtures" class="collapse">
-    <h4>Premier League Fixtures</h4>
-    <h5>Wed 25/10/2017</h5>
-    <div class="table-responsive">
-        <table class="table table-striped" style="font-size: 11px;">
-            <tbody>
-                <tr>
-                    <td>Portsmouth</td>
-                    <td>3</td>
-                    <td>-</td>
-                    <td>0</td>
-                    <td>Southampton</td>
-                </tr>
-                <tr>
-                    <td>Arsenal</td>
-                    <td>1</td>
-                    <td>-</td>
-                    <td>1</td>
-                    <td>Chelsea</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <h5>Sat 28/10/2017</h5>
-    <div class="table-responsive">
-        <table class="table table-striped" style="font-size: 11px;">
-            <tbody>
-                <tr>
-                    <td>Portsmouth</td>
-                    <td></td>
-                    <td>v</td>
-                    <td></td>
-                    <td>Arsenal</td>
-                </tr>
-                <tr>
-                    <td>Chelsea</td>
-                    <td></td>
-                    <td>v</td>
-                    <td></td>
-                    <td>Southampton</td>
-                </tr>
-            </tbody>
-        </table>
+    <h4>????????????? Fixtures</h4>
+    <div *ngFor="let fixtureDate of fixtureDates">
+        <h5>{{fixtureDate}}</h5>
+        <div class="table-responsive">
+            <table class="table table-striped" style="font-size: 11px;">
+                <tbody>
+                    <tr *ngFor="let fixture of getFixturesForDate(fixtureDate)">
+                        <td>{{fixture.attributes.homeTeam.teamName}}</td>
+                        <td>{{fixture.attributes.homeGoals}}</td>
+                        <td>-</td>
+                        <td>{{fixture.attributes.awayGoals}}</td>
+                        <td>{{fixture.attributes.awayTeam.teamName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

@@ -15,6 +15,7 @@ export interface SeasonDivisionRelationship {
   division: Relationship;
   teams: TeamsRelationship;
   season: Relationship;
+  fixtures: Relationship;
 }
 
 export interface Relationship {
